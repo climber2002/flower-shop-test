@@ -15,13 +15,14 @@ class BundleResult
   def create_bundle(bundle_rule)
     unless can_create_bundle?(bundle_rule)
       raise ArgumentError,
-            "Can't fulfill the bundle, bundle quantity: #{bundle_rule.quantity}, remaining: #{remaining_flowers}"
+            "Can't create bundle, bundle quantity: #{bundle_rule.quantity}, remaining: #{remaining_flowers}"
     end
 
     add_bundle(bundle_rule)
     update_remaining(bundle_rule)
   end
 
+  # Returns true if there is no remaining flowers that are not bundled
   def all_bundled?
     remaining_flowers.zero?
   end
