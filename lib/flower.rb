@@ -1,9 +1,9 @@
 class Flower
-  attr_reader :name, :code, :bundles
+  attr_reader :name, :code, :bundle_rules
 
-  def initialize(name, code, bundles = [])
+  def initialize(name, code, bundle_rules = [])
     @name = name
     @code = code
-    @bundles = bundles.sort { |a, b| b.price <=> a.price }
+    @bundle_rules = bundle_rules.sort { |a, b| b.price <=> a.price }
   end
 end
