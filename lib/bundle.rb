@@ -5,4 +5,10 @@ class Bundle
     @quantity = quantity
     @price = price
   end
+
+  def ==(o)
+    self.class == o.class &&
+      quantity == o.quantity &&
+      price == o.price
+  end
 end
