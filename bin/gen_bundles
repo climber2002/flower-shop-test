@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/bundle_app'
+
+begin
+  if ARGV.empty?
+    puts 'Usage: ./bin/gen_bundles input'
+  else
+    input_lines = File.readlines(ARGV[0])
+    BundleApp.generate_bundles(input_lines)
+  end
+rescue StandardError => error
+  puts "Error: #{error.message}"
+end
