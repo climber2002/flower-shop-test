@@ -18,6 +18,6 @@ class Flower
                                                          BundleRule.new(5, 9.95),
                                                          BundleRule.new(9, 16.99)]) }
   def self.find(code)
-    @all_flowers.fetch(code) { |code| raise ArgumentError, "Code #{} is not found" }
+    @all_flowers.fetch(code) { |code| raise ArgumentError, "Code #{code} is not found" }
   end
 end
