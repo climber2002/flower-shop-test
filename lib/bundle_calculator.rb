@@ -1,3 +1,5 @@
+require_relative 'bundle_result'
+
 module BundleCalculator
   def self.bundle(flower, flower_quantity)
     bundle_rules = flower.bundle_rules
@@ -9,7 +11,7 @@ module BundleCalculator
       bundle_rules = bundle_rules.drop(1)
       break if bundle_rules.empty?
     end
-    raise ArgumentError, "Can't fully bundle the flower. flower_quantity: #{flower_quantity}"
+    raise ArgumentError, "Can't fully bundle the flowers. flower_quantity: #{flower_quantity}"
   end
 
   private

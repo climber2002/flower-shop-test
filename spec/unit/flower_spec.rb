@@ -5,10 +5,10 @@ describe Flower do
   describe '#initialize' do
     subject do
       Flower.new('Lilies', 'L09', [
-                  BundleRule.new(6, 16.95),
-                  BundleRule.new(3, 9.95),
-                  BundleRule.new(9, 24.95)
-                ])
+                   BundleRule.new(6, 16.95),
+                   BundleRule.new(3, 9.95),
+                   BundleRule.new(9, 24.95)
+                 ])
     end
 
     it { expect(subject.name).to eq 'Lilies' }
@@ -20,7 +20,7 @@ describe Flower do
                                           BundleRule.new(3, 9.95)]
     end
   end
-  
+
   describe '.find' do
     context 'when the code exists' do
       it 'should return correct flower' do

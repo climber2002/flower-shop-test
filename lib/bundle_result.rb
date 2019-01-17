@@ -33,7 +33,7 @@ class BundleResult
       total += bundle_rule.price * count
     end
 
-    total
+    total.round(2)
   end
 
   private
