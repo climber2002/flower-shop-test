@@ -4,7 +4,7 @@ require_relative '../lib/bundle_app'
 
 begin
   if ARGV.empty?
-    puts 'Usage: ./bin/gen_bundles input'
+    puts 'Usage: ./bin/gen_bundles input_txt'
   else
     input_lines = File.readlines(ARGV[0])
     BundleApp.generate_bundles(input_lines)
