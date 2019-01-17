@@ -83,4 +83,25 @@ describe BundleResult do
       end
     end
   end
+
+  describe '#total_bundled_price' do
+    subject { BundleResult.new(15, 'L09') }
+
+    context 'when no bundled' do
+      it { expect(subject.total_bundled_price).to eq 0.0 }
+    end
+
+    context 'when has multiple bundles' do
+      let(:bundle_rule) { BundleRule.new(4, 6.99) }
+      let(:bundle_rule2) { BundleRule.new(2, 2.99) }
+
+      before do
+        subject.create_bundle(bundle_rule)
+        subject.create_bundle(bundle_rule)
+        subject.create_bundle(bundle_rule2)
+      end
+
+      it { expect(subject.total_bundled_price).to eq 6.99 * 2 + 2.99 }
+    end
+  end
 end

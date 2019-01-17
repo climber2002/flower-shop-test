@@ -27,6 +27,15 @@ class BundleResult
     remaining_flowers.zero?
   end
 
+  def total_bundled_price
+    total = 0.0
+    bundles.each do |bundle_rule, count|
+      total += bundle_rule.price * count
+    end
+
+    total
+  end
+
   private
 
   def add_bundle(bundle_rule)
